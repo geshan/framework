@@ -40,7 +40,7 @@ jobs:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, gd
           tools: composer:v2
-          coverage: xdebug
+          coverage: pcov
 
       - name: Setup Memcached
         uses: niden/actions-memcached@v7
@@ -95,7 +95,7 @@ jobs:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, gd, pdo_mysql, fileinfo, ftp
           tools: composer:v2
-          coverage: xdebug
+          coverage: pcov
 
       - name: Setup problem matchers
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
